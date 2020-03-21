@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">BeRoutes</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">E-mail</string>
+    <string name="prompt_register_password">Contraseña (8 caracteres mín.)</string>
+    <string name="prompt_login_password">Contraseña</string>
+    <string name="action_login">Iniciar sesión</string>
+    <string name="action_login_short">Iniciar sesión</string>
+    <string name="action_register">Registrarse</string>
+    <string name="action_register_short">Registrarse</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="action_remember_password">Recordar contraseña</string>
+    <string name="app_slogan">Share your trip</string>
+    <string name="action_forgetPass">¿Has olvidado tu contraseña?</string>
+    <string name="action_returnToLogin">¿Ya tienes una cuenta? Inicia sesión</string>
+    <string name="action_acceptTerms">Acepto los Términos y condiciones y Política de privacidad.</string>
+    <string name="info_register_form">Formulario de registro</string>
+    <string name="info_recoverPassTitle">Restablecer contraseña</string>
+    <string name="info_recoverPass">Te enviaremos un email para que puedas restablecer tu contraseña.</string>
+    <string name="action_recoverPass">Restablecer</string>
+    <string name="info_loginTitle">Iniciar sesión</string>
+    <string name="info_registerTitle">¿No tienes una cuenta BeRoutes?</string>
+    <string name="action_choose_login">Iniciar sesión con Email</string>
+    <string name="action_choose_register">Registrarse</string>
+</resources>
