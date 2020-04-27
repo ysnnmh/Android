@@ -26,4 +26,9 @@
     <string name="info_registerTitle">¿No tienes una cuenta BeRoutes?</string>
     <string name="action_choose_login">Iniciar sesión con Email</string>
     <string name="action_choose_register">Registrarse</string>
+    <string name="title_favorites">Favoritos</string>
+    <string name="title_search">Buscar</string>
+    <string name="title_create">Crear ruta</string>
+    <string name="title_activity_rute_list">RuteListActivity</string>
+    <string name="description_image_list">route_image</string>
 </resources>

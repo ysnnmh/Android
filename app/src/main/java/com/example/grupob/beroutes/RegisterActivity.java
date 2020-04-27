@@ -14,17 +14,15 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
+import androidx.annotation.NonNull;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -59,7 +57,6 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
     // UI references.
     private EditText mEmailView;
     private EditText mPasswordView;
-    private View mProgressView;
     private View mRegisterFormView;
 
     Button registerButton;
@@ -94,7 +91,6 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         });
 
         mRegisterFormView = findViewById(R.id.email_register_form);
-        mProgressView = findViewById(R.id.register_progress);
 
         registerButton = findViewById(R.id.register_button);
         loginButton = findViewById(R.id.register_returnToLogin);
@@ -207,7 +203,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            showProgress(true);
+            /* showProgress(true); */
             mAuthTask = new UserRegisterTask(email, password);
             mAuthTask.execute((Void) null);
         }
@@ -226,7 +222,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
     /**
      * Shows the progress UI and hides the login form.
      */
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+    /* @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
         // for very easy animations. If available, use these APIs to fade-in
@@ -257,7 +253,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
             mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
             mRegisterFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
-    }
+    } */
 
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
@@ -342,7 +338,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         @Override
         protected void onPostExecute(final Boolean success) {
             mAuthTask = null;
-            showProgress(false);
+            /* showProgress(false); */
 
             if (success) {
                 finish();
@@ -355,7 +351,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         @Override
         protected void onCancelled() {
             mAuthTask = null;
-            showProgress(false);
+            /* showProgress(false);*/
         }
     }
 }

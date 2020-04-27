@@ -15,15 +15,6 @@
     android:backgroundTint="@color/colorPrimary"
     android:backgroundTintMode="multiply">
 
-    <!-- Register progress -->
-    <ProgressBar
-        android:id="@+id/recoverPass_progress"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone" />
-
     <LinearLayout
         android:id="@+id/email_recoverPass_form"
         android:layout_width="match_parent"
@@ -34,6 +25,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp">
 
+        <!-- LOGO -->
         <ImageView
             android:id="@+id/recoverPass_imageView"
             android:layout_width="150dp"
@@ -57,7 +49,9 @@
             android:text="@string/app_slogan"
             android:textSize="14sp"
             android:textColor="@android:color/white"/>
+        <!-- -->
 
+        <!-- BOTÓN PARA ACCEDER A LA PANTALLA PARA INICIAR SESIÓN -->
         <Button
             android:id="@+id/choose_login_button"
             android:layout_width="match_parent"
@@ -68,7 +62,9 @@
             android:background="@drawable/roundedbutton"
             android:backgroundTint="@android:color/white"
             android:textColor="@android:color/black" />
+        <!-- -->
 
+        <!-- INFO PARA EL BOTÓN DE REGISTRO -->
         <TextView
             android:id="@+id/recoverPass_info"
             android:layout_width="match_parent"
@@ -78,7 +74,9 @@
             android:text="@string/info_registerTitle"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
+        <!-- -->
 
+        <!-- BOTÓN PARA ACCEDER A LA PANTALLA PARA REGISTRARSE -->
         <Button
             android:id="@+id/choose_register_button"
             android:layout_width="match_parent"
@@ -89,7 +87,7 @@
             android:background="@drawable/roundedbutton"
             android:backgroundTint="@android:color/white"
             android:textColor="@android:color/black" />
-
+        <!-- -->
 
     </LinearLayout>
 </LinearLayout>
