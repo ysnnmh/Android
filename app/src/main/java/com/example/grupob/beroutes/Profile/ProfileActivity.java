@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
-import com.example.grupob.beroutes.Account.AccountSettingActivity;
 import com.example.grupob.beroutes.Home.HomeActivity;
 import com.example.grupob.beroutes.R;
 

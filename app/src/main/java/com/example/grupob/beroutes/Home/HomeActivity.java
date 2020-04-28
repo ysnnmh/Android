@@ -8,10 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.example.grupob.beroutes.R;
 import com.example.grupob.beroutes.Utils.BottomNavigationViewHelper;
+import com.example.grupob.beroutes.Utils.SectionsPagerAdapter;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 public class HomeActivity extends AppCompatActivity {

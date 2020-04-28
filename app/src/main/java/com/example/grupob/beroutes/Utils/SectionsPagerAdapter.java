@@ -1,4 +1,4 @@
-package com.example.grupob.beroutes.Home;
+package com.example.grupob.beroutes.Utils;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

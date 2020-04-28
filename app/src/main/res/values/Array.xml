@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Categorias">
+        <item> Option 1</item>
+        <item> Option 2</item>
+        <item> Option 3</item>
+        <item> Option 4</item>
+        <item> Option 5</item>
+        <item> Option 6</item>
+    </string-array>
+    <string-array name="Dias">
+        <item> Option 1</item>
+        <item> Option 2</item>
+        <item> Option 3</item>
+        <item> Option 4</item>
+        <item> Option 5</item>
+        <item> Option 6</item>
+    </string-array>
+    <string-array name="Temporada">
+        <item> Option 1</item>
+        <item> Option 2</item>
+        <item> Option 3</item>
+        <item> Option 4</item>
+        <item> Option 5</item>
+        <item> Option 6</item>
+    </string-array>
+    <string-array name="Presupuesto">
+        <item> Option 1</item>
+        <item> Option 2</item>
+        <item> Option 3</item>
+        <item> Option 4</item>
+        <item> Option 5</item>
+        <item> Option 6</item>
+    </string-array>
+</resources>
