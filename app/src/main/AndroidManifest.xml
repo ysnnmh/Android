@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailsRouteActivity"></activity>
+        <activity android:name=".DetailsRouteActivity"/>
         <activity android:name=".ChooseLoginRegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RecoverPassActivity" />
