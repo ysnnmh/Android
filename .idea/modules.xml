@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BeRoutes.iml" filepath="$PROJECT_DIR$/BeRoutes.iml" group="BeRoutes" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="BeRoutes/app" />
+      <module fileurl="file://$PROJECT_DIR$/Master2.iml" filepath="$PROJECT_DIR$/Master2.iml" group="Master2" />
+      <module fileurl="file://$PROJECT_DIR$/app/Master2-app.iml" filepath="$PROJECT_DIR$/app/Master2-app.iml" group="Master2/app" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Android/app" />
     </modules>
   </component>
 </project>
