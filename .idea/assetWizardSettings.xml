@@ -35,7 +35,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/D:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_favorite_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/D:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/communication/ic_call_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -57,11 +57,10 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="assetType" value="IMAGE" />
                                       <entry key="imageAsset" value="C:\Users\Yasim\Desktop\índiceqw.png" />
-                                      <entry key="outputName" value="ic_faphoto" />
+                                      <entry key="outputName" value="ic_phone" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="909090" />
+                                      <entry key="themeColor" value="000000" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -98,7 +97,18 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="color" value="000000" />
+                                                <entry key="color" value="029001" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                      <entry key="clipartAsset">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="url" value="jar:file:/D:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_check_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -119,9 +129,8 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="assetType" value="IMAGE" />
                                       <entry key="imageAsset" value="C:\Users\Yasim\Desktop\índiceqw.png" />
-                                      <entry key="outputName" value="ic_faphoto" />
+                                      <entry key="outputName" value="ic_checkmark" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -168,7 +177,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputIconType" value="LAUNCHER_LEGACY" />
+                            <entry key="outputIconType" value="ACTIONBAR" />
                           </map>
                         </option>
                       </PersistentState>

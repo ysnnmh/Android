@@ -32,8 +32,8 @@
     <string name="title_activity_rute_list">RuteListActivity</string>
     <string name="description_image_list">route_image</string>
     <string name="details_exempledescript">Lorem Ipsun istin icole hasta que fisticolico de nimiluti. Bicuris di Cadi sa rese poli que kala pragmatas istem filis mu ke su aresi.</string>
-    <string name="sign_out">Salir</string>
-    <string name="edit_Profile">Editar Perfil</string>
+    <string name="sign_out_fragment">Salir</string>
+    <string name="edit_Profile_fragment">Editar Perfil</string>
 
     <!-- Strings related to Routes Creation -->
     <string name="exampleImagen">Imagen de ejemplo</string>
