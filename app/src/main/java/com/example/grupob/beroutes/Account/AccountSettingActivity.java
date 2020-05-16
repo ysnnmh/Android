@@ -21,7 +21,7 @@ import androidx.viewpager.widget.ViewPager;
 
 public class AccountSettingActivity extends AppCompatActivity {
 
-    private static final String TAG = "AcoountSettingActivity";
+    private static final String TAG = "AccountSettingActivity";
 
     private Context mContext;
 
@@ -35,10 +35,12 @@ public class AccountSettingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_accountsettings);
         mContext = AccountSettingActivity.this;
         Log.d(TAG, "onCreate: started.");
-        mViewPager = findViewById(R.id.container);
-        mRelativeLayout = findViewById(R.id.relLayout1);
+        mViewPager = (ViewPager)findViewById(R.id.container);
+        mRelativeLayout = (RelativeLayout) findViewById(R.id.relLayout1);
 
         setupSettingsList();
+
+        setupFragments();
 
         //setup de la flecha de navegacion de vuelta al ProfileActivity
         ImageView backArrow = (ImageView) findViewById(R.id.backArrow);
@@ -52,10 +54,10 @@ public class AccountSettingActivity extends AppCompatActivity {
 
     }
 
-    private void setupFragment(){
+    private void setupFragments(){
 
         pagerAdapter = new SectionsStatePagerAdapter(getSupportFragmentManager());
-        pagerAdapter.addFragment(new EditProfileFragment(), getString(R.string.edit_Profile_fragment)); //fragment 0
+        pagerAdapter.addFragment(new EditProfileFragment(), getString(R.string.edit_profile_fragment)); //fragment 0
         pagerAdapter.addFragment(new SignOutFragment(), getString(R.string.sign_out_fragment)); //fragment 1
     }
 
@@ -66,15 +68,16 @@ public class AccountSettingActivity extends AppCompatActivity {
         mViewPager.setCurrentItem(fragmentNumber);
     }
 
+
     private void setupSettingsList(){
         Log.d(TAG, "setupSettingsList: initializing 'Account Settings' list ");
         ListView listView = (ListView) findViewById(R.id.lvAccountSettings);
 
         ArrayList<String> option = new ArrayList<>();
-        option.add(getString(R.string.edit_Profile_fragment)); //fragment 0
+        option.add(getString(R.string.edit_profile_fragment)); //fragment 0
         option.add(getString(R.string.sign_out_fragment)); //fragment 1
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, option);
+        ArrayAdapter adapter = new ArrayAdapter(mContext, android.R.layout.simple_list_item_1, option);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -54,7 +54,7 @@ public class ProfileActivity extends AppCompatActivity {
        profileName.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               Log.d(TAG, "onClick: navigating to account settings. ");
+               Log.d(TAG, "onClick: navigating to Home. ");
                Intent intent = new Intent(mContext, HomeActivity.class);
                startActivity(intent);
            }
