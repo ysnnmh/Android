@@ -38,10 +38,13 @@ public class EditProfileFragment extends Fragment {
     }
 
 
-            //setear la imagen para cogerla desde una URL
-    private void setProfileImage(){
+    //setear la imagen para cogerla desde una URL
+   private void setProfileImage(){
         Log.d(TAG, "setProfileImage: setting image.");
-        String imgUrl = "https://i2.wp.com/digitalpolicylaw.com/wp-content/uploads/2019/03/wjoel_180413_1777_android_001.0.jpg?fit=1200%2C800&ssl=1";
-        UniversalImageLoader.setImage(imgUrl, mProfilePhoto, null, "https://");
+        //introducir la URL correspondiente a la foto de perfil
+        String imgUrl = "";
+        UniversalImageLoader.setImage(imgUrl, mProfilePhoto, null, "");
     }
+
+
 }
