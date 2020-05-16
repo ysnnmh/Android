@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,7 +30,7 @@ public class HomeActivity extends AppCompatActivity {
         setupViewPager();
     }
 
- //Responsable de añadir los 2 tabs de la barra : ghome y perfil.
+ //Responsable de añadir los 2 tabs de la barra : home y perfil.
     private void setupViewPager(){
         SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new HomeFragment());
