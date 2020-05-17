@@ -35,8 +35,8 @@ public class AccountSettingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_accountsettings);
         mContext = AccountSettingActivity.this;
         Log.d(TAG, "onCreate: started.");
-        mViewPager = (ViewPager)findViewById(R.id.container);
-        mRelativeLayout = (RelativeLayout) findViewById(R.id.relLayout1);
+        mViewPager = findViewById(R.id.container);
+        mRelativeLayout = findViewById(R.id.relLayout1);
 
         setupSettingsList();
 
@@ -77,7 +77,7 @@ public class AccountSettingActivity extends AppCompatActivity {
         option.add(getString(R.string.edit_profile_fragment)); //fragment 0
         option.add(getString(R.string.sign_out_fragment)); //fragment 1
 
-        ArrayAdapter adapter = new ArrayAdapter(mContext, android.R.layout.simple_list_item_1, option);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, option);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
