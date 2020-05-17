@@ -25,26 +25,38 @@ public class EditProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_editprofile, container, false);
         mProfilePhoto = (ImageView) view.findViewById(R.id.profile_photo);
 
-        initImageLoader();
+        //initImageLoader();
         setProfileImage();
+
+        //flecha para volver a configuracion
+        ImageView backArrow = (ImageView) view.findViewById(R.id.backArrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: navigation back to configuration");
+                getActivity().finish();
+            }
+        });
 
         return view;
     }
-
+/*
     //inicializar el imageLoader
     private void initImageLoader(){
         UniversalImageLoader universalImageLoader = new UniversalImageLoader(getActivity());
         ImageLoader.getInstance().init(universalImageLoader.getConfig());
-    }
+    }*/
 
-
+    /**
+     * mover a la pagina de inicio una vez que este toda la navegacion configurada para que la imagen de perfil cargue desde el principio junto con el initImageLoader();
+     */
     //setear la imagen para cogerla desde una URL
-   private void setProfileImage(){
+    private void setProfileImage(){
         Log.d(TAG, "setProfileImage: setting image.");
         //introducir la URL correspondiente a la foto de perfil
-        String imgUrl = "";
-        UniversalImageLoader.setImage(imgUrl, mProfilePhoto, null, "");
-    }
+            String imgURL = "www.androidcentral.com/sites/androidcentral.com/files/styles/xlarge/public/article_images/2016/08/ac-lloyd.jpg?itok=bb72IeLf";
+            UniversalImageLoader.setImage(imgURL, mProfilePhoto, null, "https://");
+        }
 
 
 }
