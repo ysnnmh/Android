@@ -46,7 +46,8 @@
             android:name=".RoutesCreation.MapsActivity"
             android:label="@string/title_activity_maps" />
 
-        <activity android:name=".Account.AccountSettingActivity" >
+
+        <activity android:name=".Profile.ProfileActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -56,7 +57,6 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ChooseLoginRegisterActivity" />
         <activity android:name=".RecoverPassActivity" />
-        <activity android:name=".Profile.ProfileActivity" />
         <activity android:name=".Fav.FavActivity" />
         <activity android:name=".Search.SearchActivity" />
         <activity android:name=".Add.AddActivity" />
@@ -65,6 +65,7 @@
 		<activity android:name=".DetailsRouteActivity"/>
 		<activity android:name=".RoutesListActivity"/>
         <activity android:name=".RoutesCreation.RoutesCreation"/>
+    <activity android:name=".Account.AccountSettingActivity" />
     </application>
 
 </manifest>
