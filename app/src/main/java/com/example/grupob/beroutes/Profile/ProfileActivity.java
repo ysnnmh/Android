@@ -1,8 +1,8 @@
+
 package com.example.grupob.beroutes.Profile;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -26,7 +26,6 @@ public class ProfileActivity extends AppCompatActivity {
     private static final String TAG = "ProfileActivity";
     private Context mContext = ProfileActivity.this;
     private static final int NUM_GRID_COLUMNS = 3;
-
     private ProgressBar mProgressBar;
     private ImageView profilePhoto;
 
@@ -47,7 +46,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         tempGridSetup();
     }
-
     private void tempGridSetup(){
         ArrayList<String> imgURLs = new ArrayList<>();
         imgURLs.add("https://i.redd.it/clusqsm4oxzy.jpg");
@@ -79,16 +77,16 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     /**
-     * MOVER AL HOME junto ocn el initImageLoader()
+     * mover a la pagina de inicio una vez que este toda la navegacion configurada para que la imagen de perfil cargue desde el principio junto con el initImageLoader();
      */
     private void initImageLoader(){
         UniversalImageLoader universalImageLoader = new UniversalImageLoader(mContext);
         ImageLoader.getInstance().init(universalImageLoader.getConfig());
     }
 
-/**
-descomentar una vez este todo integrado para poder visualizarse la foto de perfil en la pantalla de perfil
- */
+    /**
+     visualizarse la foto de perfil en la pantalla de perfil
+     */
     private void setProfileImage(){
         Log.d(TAG, "setProfileImage: setting image.");
         //introducir la URL correspondiente a la foto de perfil
@@ -107,26 +105,31 @@ descomentar una vez este todo integrado para poder visualizarse la foto de perfi
         Toolbar toolbar = (Toolbar) findViewById(R.id.profileToolBar);
         setSupportActionBar(toolbar);
 
-        ImageView profileMenu = (ImageView) findViewById(R.id.profileMenu);
-        profileMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "onClick: navigating to account settings. ");
-                Intent intent = new Intent(mContext, AccountSettingActivity.class);
-                startActivity(intent);
-            }
-        });
+       ImageView profileMenu = (ImageView) findViewById(R.id.profileMenu);
+       profileMenu.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Log.d(TAG, "onClick: navigating to account settings. ");
+               Intent intent = new Intent(mContext, AccountSettingActivity.class);
+               startActivity(intent);
+           }
+       });
 
-        ImageView profileName = (ImageView) findViewById(R.id.profileName);
-        profileName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "onClick: navigating to Home. ");
-                Intent intent = new Intent(mContext, HomeActivity.class);
-                startActivity(intent);
-            }
-        });
+       ImageView profileName = (ImageView) findViewById(R.id.profileName);
+       profileName.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Log.d(TAG, "onClick: navigating to Home. ");
+               Intent intent = new Intent(mContext, HomeActivity.class);
+               startActivity(intent);
+           }
+       });
 
     }
 
-}
+    }
+
+
+
+
+

@@ -51,4 +51,5 @@
     <string name="title_activity_maps">Map</string>
     <string name="UploadImgs">Subir imagenes</string>
     <string name="SelectImgs">Seleccionar imagenes</string>
+    <string name="detailsroute_image">detailsRoute_image</string>
 </resources>

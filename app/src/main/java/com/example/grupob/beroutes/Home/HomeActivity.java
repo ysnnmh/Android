@@ -30,7 +30,7 @@ public class HomeActivity extends AppCompatActivity {
         setupViewPager();
     }
 
-    //Responsable de añadir los 2 tabs de la barra : home y perfil.
+ //Responsable de añadir los 2 tabs de la barra : home y perfil.
     private void setupViewPager(){
         SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new HomeFragment());
