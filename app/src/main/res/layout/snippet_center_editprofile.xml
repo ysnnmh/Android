@@ -9,7 +9,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/white"
-            android:padding="20dp">
+            android:paddingVertical="@dimen/pageVpadding"
+            android:paddingHorizontal="@dimen/pageHpadding">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="120dp"
@@ -23,7 +24,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Change photo"
+                android:text="@string/uploadImagen"
                 android:id="@+id/changeProfilePhoto"
                 android:layout_below="@+id/profile_photo"
                 android:layout_centerHorizontal="true"
@@ -40,7 +41,7 @@
                 android:layout_below="@+id/changeProfilePhoto"
                 android:layout_marginTop="80dp"
                 android:id="@+id/relLayout1"
-                android:background="@drawable/grey__border_bottom">
+                android:background="@drawable/grey_border">
 
                 <ImageView
                     android:layout_width="35dp"
@@ -54,7 +55,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="40dp"
                     android:inputType="textNoSuggestions"
-                    android:hint="username"
+                    android:hint="usuario"
                     android:layout_marginLeft="40dp" />
 
             </RelativeLayout>
@@ -66,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@+id/relLayout1"
-                android:background="@drawable/grey__border_bottom"
+                android:background="@drawable/grey_border"
                 android:id="@+id/relLayout2"
                 android:layout_marginTop="15dp">
 
@@ -82,7 +83,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="40dp"
                     android:inputType="textNoSuggestions"
-                    android:hint="display name"
+                    android:hint="nombre"
                     android:layout_marginLeft="40dp" />
 
             </RelativeLayout>
@@ -92,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@+id/relLayout2"
-                android:background="@drawable/grey__border_bottom"
+                android:background="@drawable/grey_border"
                 android:id="@+id/relLayout3"
                 android:layout_marginTop="15dp">
 
@@ -108,7 +109,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="40dp"
                     android:inputType="textNoSuggestions"
-                    android:hint="website"
+                    android:hint="página web"
                     android:layout_marginLeft="40dp" />
 
             </RelativeLayout>
@@ -118,7 +119,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@+id/relLayout3"
-                android:background="@drawable/grey__border_bottom"
+                android:background="@drawable/grey_border"
                 android:id="@+id/relLayout4"
                 android:layout_marginTop="15dp">
 
@@ -134,7 +135,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="40dp"
                     android:inputType="textNoSuggestions"
-                    android:hint="description"
+                    android:hint="descripción"
                     android:layout_marginLeft="40dp" />
 
             </RelativeLayout>
@@ -144,7 +145,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@+id/relLayout4"
-                android:background="@drawable/grey__border_bottom"
+                android:background="@drawable/grey_border"
                 android:id="@+id/relLayout5"
                 android:layout_marginTop="15dp">
 
@@ -153,6 +154,7 @@
                     android:layout_height="35dp"
                     android:src="@drawable/ic_email"
                     android:layout_centerVertical="true"/>
+
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -171,7 +173,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@+id/relLayout5"
-                android:background="@drawable/grey__border_bottom"
+                android:background="@drawable/grey_border"
                 android:id="@+id/relLayout6"
                 android:layout_marginTop="15dp">
 
@@ -187,7 +189,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="40dp"
                     android:inputType="textNoSuggestions"
-                    android:hint="telefono"
+                    android:hint="teléfono"
                     android:layout_marginLeft="40dp" />
 
             </RelativeLayout>

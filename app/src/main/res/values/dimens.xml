@@ -6,4 +6,7 @@
     <dimen name="toolbarMarginHorizontal">15dp</dimen>
     <dimen name="toolbarMarginVertical">6dp</dimen>
     <dimen name="toolbarIcon">30dp</dimen>
+    <dimen name="pageVpadding">25dp</dimen>
+    <dimen name="pageHpadding">40dp</dimen>
+    <dimen name="imageheight">300dp</dimen>
 </resources>

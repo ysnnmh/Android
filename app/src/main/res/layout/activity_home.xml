@@ -4,13 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Home.HomeActivity">
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <!-- top toolbar-->
         <RelativeLayout
@@ -18,7 +16,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/relLayout1">
 
-            <include layout="@layout/layout_top_tabs"/>
+            <include layout="@layout/snippet_top_generaltoolbar"/>
 
         </RelativeLayout>
 
@@ -35,8 +33,7 @@
         </RelativeLayout>
         
         <!-- bottom navigation -->
-
-        <include layout="@layout/layout_bottom_navigation_view"></include>
+        <include layout="@layout/layout_bottom_navigation_view"/>
         
     </RelativeLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

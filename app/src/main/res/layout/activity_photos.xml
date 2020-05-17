@@ -1,38 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".RoutesCreation.PhotosActivity">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnSelectImg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="@string/SelectImgs"/>
+    <include layout="@layout/layout_center_viewpager"/>
 
-    <Button
-        android:id="@+id/btnUploadImg"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="@string/UploadImgs"/>
+        android:layout_height="match_parent"
+        android:id="@+id/relLayout1">
 
-    <GridView
-        android:id="@+id/gvImg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:numColumns="3"
-        android:columnWidth="100dp"
-        android:verticalSpacing="5dp"
-        android:horizontalSpacing="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"/>
-</LinearLayout>
+        <!-- top toolbar-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relLayout2">
+
+            <include layout="@layout/snippet_top_generaltoolbar"/>
+        </RelativeLayout>
+
+        <!--middle section -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/relLayout3"
+            android:layout_below="@id/relLayout2">
+
+            <include layout="@layout/layout_center_photos"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

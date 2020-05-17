@@ -50,15 +50,14 @@ public class ProfileActivity extends AppCompatActivity {
            }
        });
 
-       ImageView profileName = (ImageView) findViewById(R.id.profileName);
-       profileName.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Log.d(TAG, "onClick: navigating to Home. ");
-               Intent intent = new Intent(mContext, HomeActivity.class);
-               startActivity(intent);
-           }
-       });
+        ImageView backArrow = (ImageView) findViewById(R.id.backArrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: navigating back to 'HomeActivity'");
+                finish();
+            }
+        });
 
     }
 

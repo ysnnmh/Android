@@ -29,9 +29,5 @@
 
             <include layout="@layout/layout_center_accountsettings"/>
         </RelativeLayout>
-
-        <!-- bottom navigation -->
-        <include layout="@layout/layout_bottom_navigation_view"/>
-
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

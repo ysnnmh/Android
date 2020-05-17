@@ -42,7 +42,7 @@ public class AccountSettingActivity extends AppCompatActivity {
 
         setupFragments();
 
-        //setup de la flecha de navegacion de vuelta al ProfileActivity
+        //setup de la flecha de navegación de vuelta al ProfileActivity
         ImageView backArrow = (ImageView) findViewById(R.id.backArrow);
         backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
