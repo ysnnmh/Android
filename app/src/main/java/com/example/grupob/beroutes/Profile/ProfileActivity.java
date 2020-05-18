@@ -16,6 +16,7 @@ import android.media.Image;
 import com.example.grupob.beroutes.Account.AccountSettingActivity;
 import com.example.grupob.beroutes.Home.HomeActivity;
 import com.example.grupob.beroutes.R;
+import com.example.grupob.beroutes.RoutesListActivity;
 import com.example.grupob.beroutes.Utils.GridImageAdapter;
 import com.example.grupob.beroutes.Utils.UniversalImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -120,7 +121,7 @@ public class ProfileActivity extends AppCompatActivity {
            @Override
            public void onClick(View v) {
                Log.d(TAG, "onClick: navigating to Home. ");
-               Intent intent = new Intent(mContext, HomeActivity.class);
+               Intent intent = new Intent(mContext, RoutesListActivity.class);
                startActivity(intent);
            }
        });

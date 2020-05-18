@@ -7,6 +7,15 @@
     android:orientation="vertical"
     tools:context=".RoutesCreation.RoutesCreation">
 
+    <!-- top toolbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relLayout2">
+
+        <include layout="@layout/snippet_top_generaltoolbar"/>
+    </RelativeLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

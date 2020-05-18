@@ -86,6 +86,16 @@ public class RoutesCreation extends AppCompatActivity {
             }
         });
         //Fin de redirección de los botones
+
+        //setup de la flecha de navegacion de vuelta al ProfileActivity
+        ImageView backArrow = (ImageView) findViewById(R.id.backArrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("prueba", "onClick: navigating back to 'ProfileActivity'");
+                finish();
+            }
+        });
     }
 
     //Inicio de cargar imagen
