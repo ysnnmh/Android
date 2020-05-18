@@ -15,9 +15,11 @@ public class ChooseLoginRegisterActivity extends AppCompatActivity {
 
         Button loginButton;
         Button registerButton;
+        Button guestButton;
 
         loginButton = findViewById(R.id.choose_login_button);
         registerButton = findViewById(R.id.choose_register_button);
+        guestButton = findViewById(R.id.choose_guest_button);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +33,14 @@ public class ChooseLoginRegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(),RegisterActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });
+
+        guestButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),RoutesListActivity.class);
                 startActivityForResult(intent, 0);
             }
         });
