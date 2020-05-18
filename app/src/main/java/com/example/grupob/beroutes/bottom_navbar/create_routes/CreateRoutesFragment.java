@@ -1,12 +1,16 @@
 package com.example.grupob.beroutes.bottom_navbar.create_routes;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.grupob.beroutes.Profile.ProfileActivity;
 import com.example.grupob.beroutes.R;
+import com.example.grupob.beroutes.RoutesListActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,18 +22,17 @@ public class CreateRoutesFragment extends Fragment {
 
     private CreateRoutesViewModel createRoutesViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-         createRoutesViewModel =
-                 ViewModelProviders.of(this).get(CreateRoutesViewModel.class);
-            View root = inflater.inflate(R.layout.fragment_create, container, false);
-            final TextView textView = root.findViewById(R.id.text_notifications);
-            createRoutesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-                @Override
-                public void onChanged(@Nullable String s) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+         createRoutesViewModel = ViewModelProviders.of(this).get(CreateRoutesViewModel.class);
+         View root = inflater.inflate(R.layout.fragment_create, container, false);
+         final TextView textView = root.findViewById(R.id.text_notifications);
+         createRoutesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+             @Override
+             public void onChanged(@Nullable String s) {
                     textView.setText(s);
                 }
-            });
+         });
+
         return root;
     }
 }

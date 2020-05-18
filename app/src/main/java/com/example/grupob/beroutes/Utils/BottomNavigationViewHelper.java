@@ -41,6 +41,7 @@ public class BottomNavigationViewHelper {
                     case R.id.ic_search:
                         Intent intent3 = new Intent(context, SearchActivity.class);
                         context.startActivity(intent3);
+                        Log.d("prueba", "Hola");
                         break;
                 }
                 return false;

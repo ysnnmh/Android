@@ -14,7 +14,7 @@ import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 public class FavActivity extends AppCompatActivity {
     private static final String TAG = "FavActivity";
-    private static final int ACTIVITY_NUM = 1;
+    private static final int ACTIVITY_NUM = 3;
 
 private Context mContext = FavActivity.this;
     @Override
