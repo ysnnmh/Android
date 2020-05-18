@@ -47,25 +47,25 @@
             android:label="@string/title_activity_maps" />
 
 
-        <activity android:name=".RoutesListActivity" >
+        <activity android:name=".RegisterActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".ChooseLoginRegisterActivity" />
         <activity android:name=".RecoverPassActivity" />
         <activity android:name=".Fav.FavActivity" />
         <activity android:name=".Search.SearchActivity" />
         <activity android:name=".Add.AddActivity" />
         <activity android:name=".Profile.ProfileActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".RoutesListActivity" />
 		<activity android:name=".DetailsRouteActivity"/>
 		<activity android:name=".Home.HomeActivity"/>
         <activity android:name=".RoutesCreation.RoutesCreation"/>
-    <activity android:name=".Account.AccountSettingActivity" />
+        <activity android:name=".Account.AccountSettingActivity" />
     </application>
 
 </manifest>

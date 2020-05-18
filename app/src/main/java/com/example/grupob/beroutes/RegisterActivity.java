@@ -70,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         // Set up the register form.
         mEmailView = (EditText) findViewById(R.id.register_email);
 
-        mPasswordView = (EditText) findViewById(R.id.login_password);
+        mPasswordView = (EditText) findViewById(R.id.register_password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -82,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
             }
         });
 
-        Button mEmailRegisterButton = (Button) findViewById(R.id.login_button);
+        Button mEmailRegisterButton = (Button) findViewById(R.id.register_button);
         mEmailRegisterButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),RegisterActivity.class);
+                Intent intent = new Intent(v.getContext(),LoginActivity.class);
                 startActivityForResult(intent, 0);
             }
         });

@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mLoginFormView;
 
     Button loginButton;
-    TextView recoverPassButton;
+    TextView recoverPassButton, registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,17 +91,27 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             public void onClick(View view) {
                 attemptLogin();
             }
+
         });
 
         mLoginFormView = findViewById(R.id.email_login_form);
 
         loginButton = findViewById(R.id.login_button);
         recoverPassButton = findViewById(R.id.login_forgetPass);
+        registerButton = findViewById(R.id.login_register);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),LoginActivity.class);
+                Intent intent = new Intent(v.getContext(),RoutesListActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),RegisterActivity.class);
                 startActivityForResult(intent, 0);
             }
         });
