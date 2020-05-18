@@ -2,6 +2,7 @@ package com.example.grupob.beroutes.Account;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import com.example.grupob.beroutes.Profile.EditProfileFragment;
+import com.example.grupob.beroutes.Profile.ProfileActivity;
 import com.example.grupob.beroutes.Profile.SignOutFragment;
 import com.example.grupob.beroutes.R;
 import com.example.grupob.beroutes.Utils.SectionsStatePagerAdapter;
@@ -18,6 +20,7 @@ import java.util.ArrayList;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AccountSettingActivity extends AppCompatActivity {
 
@@ -39,18 +42,8 @@ public class AccountSettingActivity extends AppCompatActivity {
         mRelativeLayout = findViewById(R.id.relLayout1);
 
         setupSettingsList();
-
         setupFragments();
-
-        //setup de la flecha de navegación de vuelta al ProfileActivity
-        ImageView backArrow = (ImageView) findViewById(R.id.backArrow);
-        backArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "onClick: navigating back to 'ProfileActivity'");
-                finish();
-            }
-        });
+        setupToolbar();
 
     }
 
@@ -67,7 +60,6 @@ public class AccountSettingActivity extends AppCompatActivity {
         mViewPager.setAdapter(pagerAdapter);
         mViewPager.setCurrentItem(fragmentNumber);
     }
-
 
     private void setupSettingsList(){
         Log.d(TAG, "setupSettingsList: initializing 'Account Settings' list ");
@@ -88,4 +80,28 @@ public class AccountSettingActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void setupToolbar(){
+        //Setup de la flecha de navegación de vuelta a la pantalla anterior
+        ImageView backArrow = (ImageView) findViewById(R.id.backArrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: navigating back");
+                finish();
+            }
+        });
+
+        //Setup de la flecha de navegación de vuelta a la pantalla anterior
+        CircleImageView profileImage = findViewById(R.id.iconProfileImage);
+        profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: navigating to 'ProfileActivity'");
+                Intent intent = new Intent(v.getContext(), ProfileActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });
+    }
+
 }

@@ -2,6 +2,7 @@ package com.example.grupob.beroutes.RoutesCreation;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 import android.content.ClipData;
 import android.content.Intent;
@@ -10,9 +11,11 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -22,6 +25,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.grupob.beroutes.Profile.ProfileActivity;
 import com.example.grupob.beroutes.R;
 
 import java.io.ByteArrayOutputStream;
@@ -33,6 +37,9 @@ import java.util.List;
 import java.util.Map;
 
 public class PhotosActivity extends AppCompatActivity {
+
+    private static final String TAG = "PhotosActivity";
+
 
     int PICK_IMAGE = 100;
     Uri imageUri;
@@ -50,6 +57,8 @@ public class PhotosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photos);
+
+        setupToolbar();
 
         gvImagenes = findViewById(R.id.gvImg);
         btnGaleria = findViewById(R.id.btnSelectImg);
@@ -141,7 +150,10 @@ public class PhotosActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        ClipData clipData = data.getClipData();
+        ClipData clipData = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            clipData = data.getClipData();
+        }
 
         if(resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
 
@@ -158,5 +170,28 @@ public class PhotosActivity extends AppCompatActivity {
         baseAdapter = new GridViewAdapter(PhotosActivity.this, listaImagenes);
         gvImagenes.setAdapter(baseAdapter);
 
+    }
+
+    private void setupToolbar(){
+        //Setup de la flecha de navegación de vuelta a la pantalla anterior
+        ImageView backArrow = (ImageView) findViewById(R.id.backArrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: navigating back");
+                finish();
+            }
+        });
+
+        //Setup de la flecha de navegación de vuelta a la pantalla anterior
+        CircleImageView profileImage = findViewById(R.id.iconProfileImage);
+        profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: navigating to 'ProfileActivity'");
+                Intent intent = new Intent(v.getContext(), ProfileActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });
     }
 }

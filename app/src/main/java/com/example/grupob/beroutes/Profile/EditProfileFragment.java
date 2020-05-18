@@ -42,8 +42,6 @@ public class EditProfileFragment extends Fragment {
     }
 
 
-
-
     //setear la imagen para cogerla desde una URL
    private void setProfileImage(){
         Log.d(TAG, "setProfileImage: setting image.");
