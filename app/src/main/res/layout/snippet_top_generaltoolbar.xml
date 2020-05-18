@@ -35,15 +35,6 @@
                     android:src="@drawable/logo_negro_be_route"
                     tools:ignore="ContentDescription" />
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iconProfileImage"
-                    android:layout_width="@dimen/toolbarIcon"
-                    android:layout_height="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"/>
-
-
             </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>

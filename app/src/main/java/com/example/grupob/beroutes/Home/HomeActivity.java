@@ -40,8 +40,8 @@ public class HomeActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        tabLayout.getTabAt(0).setIcon(R.drawable.logo_negro_be_route);
-        tabLayout.getTabAt(1).setIcon(R.drawable.roundedbutton);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_logo_negro_be_route);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_roundedbutton);
     }
 
     /*

@@ -1,10 +1,9 @@
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/toolbarHeight"
-        android:background="@drawable/grey__border_bottom">
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary">
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
@@ -13,36 +12,33 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="@dimen/toolbarMarginHorizontal"
-                android:layout_marginVertical="@dimen/toolbarMarginVertical">
+                android:layout_height="match_parent">
+
+
 
                 <ImageView
-                    android:id="@+id/backArrow"
-                    android:layout_width="@dimen/toolbarIcon"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
+                    android:id="@+id/profileName"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_backarrow"
-                    tools:ignore="ContentDescription"/>
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/logo_blanco_be_route" />
 
                 <ImageView
-                    android:id="@+id/toolbarLogo"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/logo_negro_be_route"
-                    tools:ignore="ContentDescription" />
-
-                <ImageView
-                    android:id="@+id/profileMenu"
-                    android:layout_width="@dimen/toolbarIcon"
-                    android:layout_height="match_parent"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_alignParentRight="true"
+                    android:layout_marginEnd="20dp"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_ellipses"/>
+                    android:id="@+id/profileMenu"
+                    android:src="@drawable/ic_ellipses"
+                    android:layout_marginRight="20dp" />
+
+
+
+
+
+
             </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>

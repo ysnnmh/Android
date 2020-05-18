@@ -3,8 +3,8 @@
     <RelativeLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:paddingVertical="@dimen/pageVpadding"
-        android:paddingHorizontal="@dimen/pageHpadding"
+        android:paddingVertical="25dp"
+        android:paddingHorizontal="40dp"
         android:background="@android:color/white">
 
         <TextView
@@ -14,6 +14,7 @@
             android:text="Ajustes"
             android:textSize="35sp"
             android:textColor="@color/colorPrimaryDark"
+            android:background="@drawable/grey__border_bottom"
             android:layout_marginBottom="20dp"
             android:paddingBottom="5dp"/>
 

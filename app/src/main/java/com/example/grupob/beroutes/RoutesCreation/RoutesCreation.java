@@ -5,8 +5,6 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import de.hdodenhof.circleimageview.CircleImageView;
-
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.util.Log;
@@ -19,14 +17,10 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 
-import com.example.grupob.beroutes.Profile.ProfileActivity;
 import com.example.grupob.beroutes.R;
 import com.example.grupob.beroutes.Tools.InputFilterMinMax;
 
 public class RoutesCreation extends AppCompatActivity {
-
-    private static final String TAG = "RoutesCreationActivity";
-
 
     ImageView ivCargarImg;
     Button btnMaps;
@@ -36,8 +30,6 @@ public class RoutesCreation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_routes_creation);
-
-        setupToolbar();
 
         ivCargarImg = (ImageView) findViewById(R.id.iVCargarImg);
 
@@ -117,26 +109,4 @@ public class RoutesCreation extends AppCompatActivity {
     }
     //Fin de cargar imagen
 
-    private void setupToolbar(){
-        //Setup de la flecha de navegación de vuelta a la pantalla anterior
-        ImageView backArrow = (ImageView) findViewById(R.id.backArrow);
-        backArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "onClick: navigating back");
-                finish();
-            }
-        });
-
-        //Setup de la flecha de navegación de vuelta a la pantalla anterior
-        CircleImageView profileImage = findViewById(R.id.iconProfileImage);
-        profileImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "onClick: navigating to 'ProfileActivity'");
-                Intent intent = new Intent(v.getContext(), ProfileActivity.class);
-                startActivityForResult(intent, 0);
-            }
-        });
-    }
 }

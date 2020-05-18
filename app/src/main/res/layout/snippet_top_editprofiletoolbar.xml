@@ -2,8 +2,8 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/toolbarHeight"
-        android:background="@drawable/grey__border_bottom">
+        android:layout_height="50dp"
+        android:background="@android:color/white">
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
@@ -12,35 +12,42 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="@dimen/toolbarMarginHorizontal"
-                android:layout_marginVertical="@dimen/toolbarMarginVertical">
+                android:layout_height="match_parent">
 
                 <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_centerVertical="true"
                     android:id="@+id/backArrow"
-                    android:layout_width="@dimen/toolbarIcon"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/ic_backarrow"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp" />
+
+                <TextView
+                    android:layout_toRightOf="@+id/backArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_backarrow" />
+                    android:text="Edit Profile"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginLeft="15dp"
+                    android:id="@+id/profileName"/>
 
                 <ImageView
-                    android:id="@+id/toolbarLogo"
-                    android:layout_width="@dimen/toolbarHeight"
-                    android:layout_height="match_parent"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_centerVertical="true"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/logo_negro_be_route" />
-
-                <ImageView
                     android:id="@+id/saveChanges"
-                    android:layout_width="@dimen/toolbarIcon"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_checkmark"
                     android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/ic_checkmark" />
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp" />
+
 
             </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
