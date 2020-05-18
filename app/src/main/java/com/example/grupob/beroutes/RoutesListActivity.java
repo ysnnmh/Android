@@ -77,5 +77,7 @@ public class RoutesListActivity extends AppCompatActivity {
         });
     }
 
-
+    public void cargarDetalles(View view) {
+        startActivity(new Intent(RoutesListActivity.this, DetailsRouteActivity.class));
+    }
 }

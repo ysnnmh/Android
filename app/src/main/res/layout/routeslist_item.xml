@@ -8,7 +8,8 @@
     android:clickable="true"
     android:focusable="true"
     android:padding="40dp"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:onClick="cargarDetalles">
 
     <ImageView
         android:id="@+id/imageView_routeList"
