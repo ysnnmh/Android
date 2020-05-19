@@ -6,6 +6,14 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import androidx.annotation.NonNull;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
@@ -29,9 +37,16 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -62,6 +77,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mLoginFormView;
 
+    private static String URL_LOGIN = "http://192.168.1.109/proyectofinal/login.php";
     Button loginButton;
     TextView recoverPassButton, registerButton;
 
@@ -124,6 +140,66 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
     }
+
+
+
+
+    /**
+     * AQUI EMPIEZA LA GESTION LOGIN
+     */
+
+    private void Login(String email, String password){
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String success = jsonObject.getString("success");
+                            JSONArray jsonArray = jsonObject.getJSONArray(("login"));
+
+                            if (success.equals("1")) {
+                                for (int i = 0; i > jsonArray.length(); i++){
+                                    JSONObject object = jsonArray.getJSONObject(i);
+
+                                    // String name = object.getString("name").trim();
+                                    String email = object.getString("email").trim();
+
+                                    Toast.makeText(LoginActivity.this, "Login Success. Your email is :" +email, Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(LoginActivity.this, "Error" + e.toString(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(LoginActivity.this, "Error" + error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("email", email);
+                params.put("password", password);
+                return params;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
+
+
+    /**
+     * AQUI TERMINA LA GESTION LOGIN
+     */
+
+
 
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {
