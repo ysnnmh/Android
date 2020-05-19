@@ -13,6 +13,8 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -46,6 +48,9 @@ public class PhotosActivity extends AppCompatActivity {
 
     String URL_UPLOAD_IMAGENES = "http://exodusttt.es/appBeRoutes/UploadImagenes.php";
 
+    ImageView backArrow;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +59,12 @@ public class PhotosActivity extends AppCompatActivity {
         gvImagenes = findViewById(R.id.gvImg);
         btnGaleria = findViewById(R.id.btnSelectImg);
         btnSubirImagenes = findViewById(R.id.btnUploadImg);
+
+
+        //Toolbar
+        backArrow = (ImageView) findViewById(R.id.backArrow);
+        setupToolbar();
+
 
         btnGaleria.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,5 +169,14 @@ public class PhotosActivity extends AppCompatActivity {
         baseAdapter = new GridViewAdapter(PhotosActivity.this, listaImagenes);
         gvImagenes.setAdapter(baseAdapter);
 
+    }
+
+    private void setupToolbar(){
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }

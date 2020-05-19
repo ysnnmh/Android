@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/choose_login_button"
                 android:gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/info_registerTitle"
                 android:textColor="@android:color/white"
                 android:textSize="16sp" />
@@ -87,7 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/TVregister_info"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="@string/action_choose_register"
                 android:background="@drawable/roundedbutton"
                 android:backgroundTint="@android:color/white"

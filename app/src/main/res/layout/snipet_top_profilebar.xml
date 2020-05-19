@@ -3,7 +3,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorAccent">
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
@@ -14,15 +14,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-
-
                 <ImageView
                     android:id="@+id/profileName"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/logo_blanco_be_route" />
+                    android:src="@drawable/logo_negro_be_route" />
 
                 <ImageView
                     android:layout_width="30dp"
@@ -33,11 +31,6 @@
                     android:id="@+id/profileMenu"
                     android:src="@drawable/ic_ellipses"
                     android:layout_marginRight="20dp" />
-
-
-
-
-
 
             </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
