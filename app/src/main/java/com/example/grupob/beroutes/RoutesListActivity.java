@@ -73,6 +73,14 @@ public class RoutesListActivity extends AppCompatActivity {
         startActivity(new Intent(RoutesListActivity.this, DetailsRouteActivity.class));
     }
 
+    public void cargarDetalles1(View view) {
+        startActivity(new Intent(RoutesListActivity.this, DetailsRouteActivity1.class));
+    }
+
+    public void cargarDetalles2(View view) {
+        startActivity(new Intent(RoutesListActivity.this, DetailsRouteActivity2.class));
+    }
+
     private void setupToolbar(){
 
         ivProfile = (ImageView) findViewById(R.id.profile);

@@ -64,6 +64,8 @@
         <activity android:name=".Profile.ProfileActivity" />
         <activity android:name=".RoutesListActivity" />
 		<activity android:name=".DetailsRouteActivity"/>
+        <activity android:name=".DetailsRouteActivity1"/>
+        <activity android:name=".DetailsRouteActivity2"/>
 		<activity android:name=".Home.HomeActivity"/>
         <activity android:name=".RoutesCreation.RoutesCreation"/>
         <activity android:name=".Account.AccountSettingActivity" />

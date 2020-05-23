@@ -58,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_cappadocia"
+                android:src="@drawable/ic_san_francisco"
                 app:layout_constraintTop_toBottomOf="@+id/navigationView2"
                 tools:layout_editor_absoluteX="0dp" />
 
@@ -71,7 +71,7 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="16dp"
-                    android:text="Cappadocia"
+                    android:text="San Francisco"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp"

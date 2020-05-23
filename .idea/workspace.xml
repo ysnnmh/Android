@@ -115,7 +115,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5X_API_28_x86" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_6_API_26" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -132,8 +132,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile_vertical" />
-        <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -143,11 +143,11 @@
   </component>
   <component name="ProjectId" id="1c0IU279BNcIJ5ZXTUwMpyVudOe" />
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_5X_API_28_x86" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-19T06:00:34.984Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_6_API_22" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-23T16:07:29.018Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -160,7 +160,12 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.grupob.beroutes" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.grupob.beroutes" />
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\carlo\Documents\GitHub\Android\app\src\main\res\layout" />
       <recent name="C:\Users\Natalia\Downloads\Android\app\src\main\res\layout" />
     </key>
   </component>

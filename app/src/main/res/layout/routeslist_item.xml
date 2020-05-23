@@ -6,81 +6,258 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
-    android:padding="40dp"
-    android:background="@android:color/white"
-    android:onClick="cargarDetalles">
+    android:layout_marginLeft="40dp"
+    android:layout_marginRight="40dp"
+    android:background="@android:color/white">
 
-    <ImageView
-        android:id="@+id/item_image"
-        android:src="@drawable/ic_san_francisco"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:contentDescription="@string/description_image_list"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:scaleType="centerCrop"
-        android:layout_marginBottom="25dp"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <ScrollView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/item_title"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <LinearLayout android:onClick="cargarDetalles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="San Francisco"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-        <RatingBar
-            android:id="@+id/item_puntuation"
+            <ImageView
+                android:id="@+id/item_image"
+                android:src="@drawable/ic_cappadocia"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:contentDescription="@string/description_image_list"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="25dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/item_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cappadocia"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <RatingBar
+                    android:id="@+id/item_puntuation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@id/item_image"
+                    android:numStars="@integer/puntuation_number_stars"
+                    android:rating="4"
+                    android:layout_marginTop="10dp"
+                    style="?android:attr/ratingBarStyleSmall"
+                    tools:ignore="NotSibling"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/item_image" />
+
+                <TextView
+                    android:id="@+id/item_days"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/item_puntuation"
+                    android:layout_marginVertical="8dp"
+                    android:textSize="12sp"
+                    android:text="5 días"
+                    android:textAppearance="?attr/textAppearanceListItem"/>
+
+                <TextView
+                    android:id="@+id/item_short_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/item_title"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_toLeftOf="@id/item_puntuation"
+                    android:text="Lorem ipsum dolor sit amet, consctetur adipiscing eli ipsum dolor sit amet, consectetur" />
+
+                <TextView
+                    android:id="@+id/item_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/item_days"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:text="1000€ por persona"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout android:onClick="cargarDetalles1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_toRightOf="@id/item_image"
-            android:numStars="@integer/puntuation_number_stars"
-            android:rating="4"
-            android:layout_marginTop="10dp"
-            style="?android:attr/ratingBarStyleSmall"
-            tools:ignore="NotSibling"
-            android:layout_alignParentEnd="true"
-            android:layout_toEndOf="@id/item_image" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/item_days"
+            <ImageView
+                android:id="@+id/item_image1"
+                android:src="@drawable/ic_san_francisco"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:contentDescription="@string/description_image_list"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="25dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/item_title1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="San Francisco"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <RatingBar
+                    android:id="@+id/item_puntuation1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@id/item_image1"
+                    android:numStars="@integer/puntuation_number_stars"
+                    android:rating="4"
+                    android:layout_marginTop="10dp"
+                    style="?android:attr/ratingBarStyleSmall"
+                    tools:ignore="NotSibling"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/item_image" />
+
+                <TextView
+                    android:id="@+id/item_days1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/item_puntuation1"
+                    android:layout_marginVertical="8dp"
+                    android:textSize="12sp"
+                    android:text="5 días"
+                    android:textAppearance="?attr/textAppearanceListItem"/>
+
+                <TextView
+                    android:id="@+id/item_short_description1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/item_title1"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_toLeftOf="@id/item_puntuation1"
+                    android:text="Lorem ipsum dolor sit amet, consctetur adipiscing eli ipsum dolor sit amet, consectetur" />
+
+                <TextView
+                    android:id="@+id/item_price1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/item_days1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:text="1000€ por persona"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout android:onClick="cargarDetalles2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/item_puntuation"
-            android:layout_marginVertical="8dp"
-            android:textSize="12sp"
-            android:text="5 días"
-            android:textAppearance="?attr/textAppearanceListItem"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/item_short_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/item_title"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="40dp"
-            android:layout_toLeftOf="@id/item_puntuation"
-            android:text="Lorem ipsum dolor sit amet, consctetur adipiscing eli ipsum dolor sit amet, consectetur" />
+            <ImageView
+                android:id="@+id/item_image2"
+                android:src="@drawable/ic_nueva_york"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:contentDescription="@string/description_image_list"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="25dp"/>
 
-        <TextView
-            android:id="@+id/item_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/item_days"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:text="1000€ por persona"
-            android:textAppearance="?attr/textAppearanceListItem"
-            android:textSize="12sp" />
-    </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <TextView
+                    android:id="@+id/item_title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nueva York"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <RatingBar
+                    android:id="@+id/item_puntuation2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@id/item_image2"
+                    android:numStars="@integer/puntuation_number_stars"
+                    android:rating="4"
+                    android:layout_marginTop="10dp"
+                    style="?android:attr/ratingBarStyleSmall"
+                    tools:ignore="NotSibling"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/item_image" />
+
+                <TextView
+                    android:id="@+id/item_days2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/item_puntuation2"
+                    android:layout_marginVertical="8dp"
+                    android:textSize="12sp"
+                    android:text="5 días"
+                    android:textAppearance="?attr/textAppearanceListItem"/>
+
+                <TextView
+                    android:id="@+id/item_short_description2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/item_title2"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_toLeftOf="@id/item_puntuation2"
+                    android:text="Lorem ipsum dolor sit amet, consctetur adipiscing eli ipsum dolor sit amet, consectetur" />
+
+                <TextView
+                    android:id="@+id/item_price2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/item_days2"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:text="1000€ por persona"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
