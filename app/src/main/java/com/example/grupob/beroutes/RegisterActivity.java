@@ -1,7 +1,5 @@
 package com.example.grupob.beroutes;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
@@ -14,18 +12,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import androidx.annotation.NonNull;
-
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -37,6 +23,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.android.material.snackbar.Snackbar;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -44,6 +39,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -64,30 +62,27 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "foo@example.com:hello", "bar@example.com:world"
     };
-    /**
-     * Keep track of the register task to ensure we can cancel it if requested.
-     */
-    private UserRegisterTask mAuthTask = null;
-
-    // UI references.
-    private EditText mEmailView;
-    private EditText mPasswordView;
-    private View mRegisterFormView;
-
     private static final String TAG = "Register ";
     private static String URL_REGIST = "http://192.168.1.109/proyectofinal/register.php";
     Button registerButton;
     TextView loginButton;
-
+    /**
+     * Keep track of the register task to ensure we can cancel it if requested.
+     */
+    private UserRegisterTask mAuthTask = null;
+    // UI references.
+    private EditText mEmailView;
+    private EditText mPasswordView;
+    private View mRegisterFormView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         // Set up the register form.
-        mEmailView = (EditText) findViewById(R.id.register_email);
+        mEmailView = findViewById(R.id.register_email);
 
-        mPasswordView = (EditText) findViewById(R.id.register_password);
+        mPasswordView = findViewById(R.id.register_password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -99,7 +94,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
             }
         });
 
-        Button mEmailRegisterButton = (Button) findViewById(R.id.register_button);
+        Button mEmailRegisterButton = findViewById(R.id.register_button);
         mEmailRegisterButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -115,7 +110,8 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),LoginActivity.class);
+                Regist();
+                Intent intent = new Intent(v.getContext(), LoginActivity.class);
                 startActivityForResult(intent, 0);
             }
         });
@@ -123,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),LoginActivity.class);
+                Intent intent = new Intent(v.getContext(), LoginActivity.class);
                 startActivityForResult(intent, 0);
             }
         });
@@ -133,7 +129,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
     /**
      * metodo de registro del usuario en la base de datos
      */
-    private void Regist(){
+    private void Regist() {
 
         final String email = this.mEmailView.getText().toString().trim();
         final String password = this.mPasswordView.getText().toString().trim();
@@ -147,7 +143,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
                             JSONObject jsonObject = new JSONObject(response);
                             String success = jsonObject.getString("success");
 
-                            if (success.equals("1")){
+                            if (success.equals("1")) {
                                 Toast.makeText(RegisterActivity.this, "Register Success", Toast.LENGTH_SHORT).show();
                             }
 
@@ -162,8 +158,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(RegisterActivity.this, "Register Error" + error.toString(), Toast.LENGTH_SHORT).show();
             }
-        })
-        {
+        }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
@@ -324,7 +319,6 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
             mRegisterFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
     } */
-
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         return new CursorLoader(this,
