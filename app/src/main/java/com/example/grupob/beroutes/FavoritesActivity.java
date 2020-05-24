@@ -7,6 +7,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.ui.AppBarConfiguration;
 
 import com.example.grupob.beroutes.Fav.FavActivity;
 import com.example.grupob.beroutes.Profile.ProfileActivity;
@@ -20,29 +25,32 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.ui.AppBarConfiguration;
-
-public class RoutesListActivity extends AppCompatActivity {
+public class FavoritesActivity extends AppCompatActivity {
 
     private static final int NUM_GRID_COLUMNS = 3;
     ImageView ivProfile;
     BottomNavigationItemView bnivFavorites, bnivSearch, bnivCreate;
     GridView routesGrid;
     ArrayList routes = new ArrayList<>();
-    private Context mContext = RoutesListActivity.this;
+    private Context mContext = FavoritesActivity.this;
     private String TAG = "";
+    LinearLayout linearLayout2, linearLayout3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_routes_list);
+        setContentView(R.layout.activity_favorites);
 
 
         Intent intent = getIntent();
         String extraEmail = intent.getStringExtra("email");
         Log.d(TAG, "onCreate: te has logueado a la RoutesList / Home como : " + extraEmail);
 
+        linearLayout2 = (LinearLayout) findViewById(R.id.item2);
+        linearLayout3 = (LinearLayout) findViewById(R.id.item3);
+
+        linearLayout2.setVisibility(View.INVISIBLE);
+        linearLayout3.setVisibility(View.INVISIBLE);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -66,15 +74,15 @@ public class RoutesListActivity extends AppCompatActivity {
     }
 
     public void cargarDetalles(View view) {
-        startActivity(new Intent(RoutesListActivity.this, DetailsRouteActivity.class));
+        startActivity(new Intent(FavoritesActivity.this, DetailsRouteActivity.class));
     }
 
     public void cargarDetalles1(View view) {
-        startActivity(new Intent(RoutesListActivity.this, DetailsRouteActivity1.class));
+        startActivity(new Intent(FavoritesActivity.this, DetailsRouteActivity1.class));
     }
 
     public void cargarDetalles2(View view) {
-        startActivity(new Intent(RoutesListActivity.this, DetailsRouteActivity2.class));
+        startActivity(new Intent(FavoritesActivity.this, DetailsRouteActivity2.class));
     }
 
     private void setupToolbar() {
@@ -83,7 +91,7 @@ public class RoutesListActivity extends AppCompatActivity {
         ivProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RoutesListActivity.this, ProfileActivity.class));
+                startActivity(new Intent(FavoritesActivity.this, ProfileActivity.class));
             }
         });
     }
@@ -93,7 +101,7 @@ public class RoutesListActivity extends AppCompatActivity {
         bnivFavorites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RoutesListActivity.this, FavoritesActivity.class));
+                startActivity(new Intent(FavoritesActivity.this, FavoritesActivity.class));
             }
         });
 
@@ -101,7 +109,7 @@ public class RoutesListActivity extends AppCompatActivity {
         bnivSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RoutesListActivity.this, SearchActivity.class));
+                startActivity(new Intent(FavoritesActivity.this, SearchActivity.class));
             }
         });
 
@@ -109,7 +117,7 @@ public class RoutesListActivity extends AppCompatActivity {
         bnivCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RoutesListActivity.this, RoutesCreation.class));
+                startActivity(new Intent(FavoritesActivity.this, RoutesCreation.class));
             }
         });
     }
