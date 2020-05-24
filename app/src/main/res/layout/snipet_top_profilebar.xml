@@ -20,7 +20,7 @@
                     android:layout_height="35dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/logo_negro_be_route" />
+                    android:src="@drawable/ic_logo_negro_be_route" />
 
                 <ImageView
                     android:layout_width="30dp"
