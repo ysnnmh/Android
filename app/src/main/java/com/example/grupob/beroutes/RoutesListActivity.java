@@ -1,27 +1,15 @@
 package com.example.grupob.beroutes;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.example.grupob.beroutes.Fav.FavActivity;
 import com.example.grupob.beroutes.Profile.ProfileActivity;
-import com.example.grupob.beroutes.RoutesCreation.PhotosActivity;
 import com.example.grupob.beroutes.RoutesCreation.RoutesCreation;
 import com.example.grupob.beroutes.Search.SearchActivity;
 import com.example.grupob.beroutes.Utils.GridImageAdapter;
@@ -32,21 +20,30 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.ui.AppBarConfiguration;
+
 public class RoutesListActivity extends AppCompatActivity {
 
+    private static final int NUM_GRID_COLUMNS = 3;
     ImageView ivProfile;
     BottomNavigationItemView bnivFavorites, bnivSearch, bnivCreate;
-
-    private Context mContext = RoutesListActivity.this;
-    private static final int NUM_GRID_COLUMNS = 3;
-
     GridView routesGrid;
     ArrayList routes = new ArrayList<>();
+    private Context mContext = RoutesListActivity.this;
+    private String TAG = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_routes_list);
+
+
+        Intent intent = getIntent();
+        String extraEmail = intent.getStringExtra("email");
+        Log.d(TAG, "onCreate: te has logueado a la RoutesList / Home como : " + extraEmail);
+
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -80,9 +77,9 @@ public class RoutesListActivity extends AppCompatActivity {
         startActivity(new Intent(RoutesListActivity.this, DetailsRouteActivity2.class));
     }
 
-    private void setupToolbar(){
+    private void setupToolbar() {
 
-        ivProfile = (ImageView) findViewById(R.id.profile);
+        ivProfile = findViewById(R.id.profile);
         ivProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,8 +88,8 @@ public class RoutesListActivity extends AppCompatActivity {
         });
     }
 
-    private void setupNavBarInf(){
-        bnivFavorites = (BottomNavigationItemView) findViewById(R.id.navigation_favorites);
+    private void setupNavBarInf() {
+        bnivFavorites = findViewById(R.id.navigation_favorites);
         bnivFavorites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,7 +97,7 @@ public class RoutesListActivity extends AppCompatActivity {
             }
         });
 
-        bnivSearch = (BottomNavigationItemView) findViewById(R.id.navigation_search);
+        bnivSearch = findViewById(R.id.navigation_search);
         bnivSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,7 +105,7 @@ public class RoutesListActivity extends AppCompatActivity {
             }
         });
 
-        bnivCreate = (BottomNavigationItemView) findViewById(R.id.navigation_create);
+        bnivCreate = findViewById(R.id.navigation_create);
         bnivCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,17 +114,17 @@ public class RoutesListActivity extends AppCompatActivity {
         });
     }
 
-    private void setupImageGrid(ArrayList<String> imgURLs){
-        GridView gridView = (GridView) findViewById(R.id.gridView);
+    private void setupImageGrid(ArrayList<String> imgURLs) {
+        GridView gridView = findViewById(R.id.gridView);
         int gridWidth = getResources().getDisplayMetrics().widthPixels;
-        int imageWidth = gridWidth/NUM_GRID_COLUMNS;
+        int imageWidth = gridWidth / NUM_GRID_COLUMNS;
         gridView.setColumnWidth(imageWidth);
 
         GridImageAdapter adapter = new GridImageAdapter(mContext, R.layout.layout_grid_imageview, "", imgURLs);
         gridView.setAdapter(adapter);
     }
 
-    private void tempGridSetup(){
+    private void tempGridSetup() {
         ArrayList<String> imgURLs = new ArrayList<>();
         imgURLs.add("https://i.redd.it/clusqsm4oxzy.jpg");
         imgURLs.add("https://i.redd.it/9bf67ygj710z.jpg");
@@ -142,7 +139,7 @@ public class RoutesListActivity extends AppCompatActivity {
         setupImageGrid(imgURLs);
     }
 
-    private void initImageLoader(){
+    private void initImageLoader() {
         UniversalImageLoader universalImageLoader = new UniversalImageLoader(mContext);
         ImageLoader.getInstance().init(universalImageLoader.getConfig());
     }
