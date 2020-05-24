@@ -1,14 +1,11 @@
 package com.example.grupob.beroutes.Profile;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
-import com.example.grupob.beroutes.Account.AccountSettingActivity;
 import com.example.grupob.beroutes.R;
 import com.example.grupob.beroutes.Utils.UniversalImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -22,21 +19,30 @@ public class EditProfileFragment extends Fragment {
     private static final String TAG = "EditProfileFragment";
     private ImageView mProfilePhoto;
 
-    ImageView backArrow;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_editprofile, container, false);
         mProfilePhoto = (ImageView) view.findViewById(R.id.profile_photo);
 
+
         setProfileImage();
 
-        //Toolbar
-        setupToolbar();
+        //flecha para volver a configuracion
+        ImageView backArrow = (ImageView) view.findViewById(R.id.backArrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: navigation back to configuration");
+                getActivity().finish();
+            }
+        });
 
         return view;
     }
+
+
+
 
     //setear la imagen para cogerla desde una URL
    private void setProfileImage(){
@@ -46,15 +52,5 @@ public class EditProfileFragment extends Fragment {
        UniversalImageLoader.setImage(imgURL, mProfilePhoto, null, "https://");
     }
 
-    private void setupToolbar(){
 
-        backArrow = (ImageView) getView().findViewById(R.id.backArrow);
-        backArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "onClick: navigating back");
-                getActivity().finish();
-            }
-        });
-    }
 }
