@@ -52,4 +52,18 @@
     <string name="UploadImgs">Subir imagenes</string>
     <string name="SelectImgs">Seleccionar imagenes</string>
     <string name="detailsroute_image">detailsRoute_image</string>
+    <string name="sanfrancisco_description">La niebla cubriendo las aguas de la bahía y, de fondo, el emblemático puente rojizo de Estados Unidos.</string>
+    <string name="capadocia_description">Característica por tener uno de los monumentos naturales más impresionantes del mundo, con sus infinitas formaciones rocosas de giros imposibles, que atrapan hasta al más distraído.</string>
+    <string name="capadocia_title">Capadocia</string>
+    <string name="capadocia_days">3 días</string>
+    <string name="capadocia_price">350€ por persona</string>
+    <string name="sanfrancisco_title">San Francisco</string>
+    <string name="sanfrancisco_days">5 días</string>
+    <string name="sanfrancisco_price">890€ por persona</string>
+    <string name="nuevayork_title">Nueva York</string>
+    <string name="nuevayork_days">10 días</string>
+    <string name="nuevayork_description">La Gran Manzana, la ciudad que nunca duerme, la capital del mundo, Gotham, la ciudad de los rascacielos, \'New York, New York\',... Una de las ciudades más grandes del mundo.</string>
+    <string name="nuevayork_price">2200€ por persona</string>
+    <string name="example_categories">Naturaleza, Arte, Romántico, Relax</string>
+    <string name="map_title">Mapa de la ruta:</string>
 </resources>

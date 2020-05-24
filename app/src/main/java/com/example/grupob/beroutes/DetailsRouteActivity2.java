@@ -1,10 +1,14 @@
 package com.example.grupob.beroutes;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.grupob.beroutes.Profile.ProfileActivity;
 import com.example.grupob.beroutes.Utils.Utilidades;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -20,6 +24,9 @@ public class DetailsRouteActivity2 extends AppCompatActivity implements OnMapRea
 
     private GoogleMap mMap;
 
+    ImageView backArrow;
+    ImageView ivProfile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +36,9 @@ public class DetailsRouteActivity2 extends AppCompatActivity implements OnMapRea
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map1);
         mapFragment.getMapAsync( this);
+
+        //Toolbar
+        setupToolbar();
     }
 
     @Override
@@ -70,5 +80,23 @@ public class DetailsRouteActivity2 extends AppCompatActivity implements OnMapRea
 
     }
 
+    private void setupToolbar(){
+
+        backArrow = (ImageView) findViewById(R.id.backArrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        ivProfile = (ImageView) findViewById(R.id.profile);
+        ivProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DetailsRouteActivity2.this, ProfileActivity.class));
+            }
+        });
+    }
 }
 

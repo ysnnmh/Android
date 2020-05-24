@@ -54,7 +54,6 @@ public class RoutesListActivity extends AppCompatActivity {
                 R.id.navigation_favorites, R.id.navigation_search, R.id.navigation_create)
                 .build();
 
-
         //Toolbar
         setupToolbar();
 

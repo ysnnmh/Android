@@ -12,17 +12,19 @@
 
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
         <LinearLayout android:onClick="cargarDetalles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="15dp">
 
             <ImageView
                 android:id="@+id/item_image"
@@ -43,7 +45,7 @@
                     android:id="@+id/item_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cappadocia"
+                    android:text="@string/capadocia_title"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp"
@@ -56,7 +58,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_toRightOf="@id/item_image"
                     android:numStars="@integer/puntuation_number_stars"
-                    android:rating="4"
+                    android:rating="3"
                     android:layout_marginTop="10dp"
                     style="?android:attr/ratingBarStyleSmall"
                     tools:ignore="NotSibling"
@@ -71,8 +73,9 @@
                     android:layout_below="@id/item_puntuation"
                     android:layout_marginVertical="8dp"
                     android:textSize="12sp"
-                    android:text="5 días"
-                    android:textAppearance="?attr/textAppearanceListItem"/>
+                    android:text="@string/capadocia_days"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:layout_alignParentEnd="true" />
 
                 <TextView
                     android:id="@+id/item_short_description"
@@ -80,10 +83,14 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/item_title"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="40dp"
                     android:layout_toLeftOf="@id/item_puntuation"
-                    android:text="Lorem ipsum dolor sit amet, consctetur adipiscing eli ipsum dolor sit amet, consectetur" />
+                    android:maxLines="3"
+                    android:text="@string/capadocia_description"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginEnd="40dp"
+                    android:layout_toStartOf="@id/item_puntuation" />
 
                 <TextView
                     android:id="@+id/item_price"
@@ -92,7 +99,7 @@
                     android:layout_below="@+id/item_days"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:text="1000€ por persona"
+                    android:text="@string/capadocia_price"
                     android:textAppearance="?attr/textAppearanceListItem"
                     android:textSize="12sp" />
             </RelativeLayout>
@@ -102,7 +109,8 @@
         <LinearLayout android:onClick="cargarDetalles1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginVertical="30dp">
 
             <ImageView
                 android:id="@+id/item_image1"
@@ -123,7 +131,7 @@
                     android:id="@+id/item_title1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="San Francisco"
+                    android:text="@string/sanfrancisco_title"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp"
@@ -151,8 +159,9 @@
                     android:layout_below="@id/item_puntuation1"
                     android:layout_marginVertical="8dp"
                     android:textSize="12sp"
-                    android:text="5 días"
-                    android:textAppearance="?attr/textAppearanceListItem"/>
+                    android:text="@string/sanfrancisco_days"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:layout_alignParentEnd="true" />
 
                 <TextView
                     android:id="@+id/item_short_description1"
@@ -160,10 +169,14 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/item_title1"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="40dp"
                     android:layout_toLeftOf="@id/item_puntuation1"
-                    android:text="Lorem ipsum dolor sit amet, consctetur adipiscing eli ipsum dolor sit amet, consectetur" />
+                    android:maxLines="3"
+                    android:text="@string/sanfrancisco_description"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginEnd="40dp"
+                    android:layout_toStartOf="@id/item_puntuation1" />
 
                 <TextView
                     android:id="@+id/item_price1"
@@ -172,7 +185,7 @@
                     android:layout_below="@+id/item_days1"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:text="1000€ por persona"
+                    android:text="@string/sanfrancisco_price"
                     android:textAppearance="?attr/textAppearanceListItem"
                     android:textSize="12sp" />
             </RelativeLayout>
@@ -203,7 +216,7 @@
                     android:id="@+id/item_title2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nueva York"
+                    android:text="@string/nuevayork_title"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp"
@@ -216,7 +229,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_toRightOf="@id/item_image2"
                     android:numStars="@integer/puntuation_number_stars"
-                    android:rating="4"
+                    android:rating="5"
                     android:layout_marginTop="10dp"
                     style="?android:attr/ratingBarStyleSmall"
                     tools:ignore="NotSibling"
@@ -231,8 +244,9 @@
                     android:layout_below="@id/item_puntuation2"
                     android:layout_marginVertical="8dp"
                     android:textSize="12sp"
-                    android:text="5 días"
-                    android:textAppearance="?attr/textAppearanceListItem"/>
+                    android:text="@string/nuevayork_days"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:layout_alignParentEnd="true" />
 
                 <TextView
                     android:id="@+id/item_short_description2"
@@ -240,10 +254,14 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/item_title2"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="40dp"
                     android:layout_toLeftOf="@id/item_puntuation2"
-                    android:text="Lorem ipsum dolor sit amet, consctetur adipiscing eli ipsum dolor sit amet, consectetur" />
+                    android:maxLines="3"
+                    android:text="@string/nuevayork_description"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginEnd="40dp"
+                    android:layout_toStartOf="@id/item_puntuation2" />
 
                 <TextView
                     android:id="@+id/item_price2"
@@ -252,7 +270,7 @@
                     android:layout_below="@+id/item_days2"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:text="1000€ por persona"
+                    android:text="@string/nuevayork_price"
                     android:textAppearance="?attr/textAppearanceListItem"
                     android:textSize="12sp" />
             </RelativeLayout>

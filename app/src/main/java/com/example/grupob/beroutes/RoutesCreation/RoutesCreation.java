@@ -17,8 +17,14 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 
+import com.example.grupob.beroutes.Account.AccountSettingActivity;
+import com.example.grupob.beroutes.Fav.FavActivity;
+import com.example.grupob.beroutes.Profile.ProfileActivity;
 import com.example.grupob.beroutes.R;
+import com.example.grupob.beroutes.RoutesListActivity;
+import com.example.grupob.beroutes.Search.SearchActivity;
 import com.example.grupob.beroutes.Tools.InputFilterMinMax;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 
 public class RoutesCreation extends AppCompatActivity {
 
@@ -26,10 +32,16 @@ public class RoutesCreation extends AppCompatActivity {
     Button btnMaps;
     Button btnPhotos;
 
+    ImageView backArrow;
+    ImageView ivProfile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_routes_creation);
+
+        //Toolbar
+        setupToolbar();
 
         ivCargarImg = (ImageView) findViewById(R.id.iVCargarImg);
 
@@ -119,4 +131,22 @@ public class RoutesCreation extends AppCompatActivity {
     }
     //Fin de cargar imagen
 
+    private void setupToolbar(){
+
+        backArrow = (ImageView) findViewById(R.id.backArrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        ivProfile = (ImageView) findViewById(R.id.profile);
+        ivProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RoutesCreation.this, ProfileActivity.class));
+            }
+        });
+    }
 }

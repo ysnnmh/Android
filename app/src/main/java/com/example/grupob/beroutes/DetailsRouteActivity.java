@@ -2,9 +2,12 @@ package com.example.grupob.beroutes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -12,6 +15,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.grupob.beroutes.Profile.ProfileActivity;
 import com.example.grupob.beroutes.Utils.Utilidades;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -33,6 +37,9 @@ public class DetailsRouteActivity extends AppCompatActivity implements OnMapRead
 
     private GoogleMap mMap;
 
+    ImageView backArrow;
+    ImageView ivProfile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +49,9 @@ public class DetailsRouteActivity extends AppCompatActivity implements OnMapRead
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map1);
         mapFragment.getMapAsync( this);
+
+        //Toolbar
+        setupToolbar();
     }
 
     @Override
@@ -81,6 +91,25 @@ public class DetailsRouteActivity extends AppCompatActivity implements OnMapRead
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(center, 14));
         /////////////
 
+    }
+
+    private void setupToolbar(){
+
+        backArrow = (ImageView) findViewById(R.id.backArrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        ivProfile = (ImageView) findViewById(R.id.profile);
+        ivProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DetailsRouteActivity.this, ProfileActivity.class));
+            }
+        });
     }
 
 }
